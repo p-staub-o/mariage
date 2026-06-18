@@ -1,0 +1,384 @@
+main {
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.topbar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  padding: 0 40px;
+  color: var(--paper);
+  background: linear-gradient(180deg, rgba(18, 34, 32, 0.72), rgba(18, 34, 32, 0));
+}
+
+.brand {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  color: inherit;
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 14px;
+}
+
+.navLinks a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navLinks a:hover,
+.navLinks a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.heroSection {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: 92vh;
+  overflow: hidden;
+  background: var(--evergreen);
+}
+
+.heroImage,
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.heroOverlay {
+  background:
+    linear-gradient(90deg, rgba(18, 34, 32, 0.82), rgba(18, 34, 32, 0.38) 45%, rgba(18, 34, 32, 0.18)),
+    linear-gradient(0deg, rgba(18, 34, 32, 0.76), rgba(18, 34, 32, 0.08) 55%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: min(760px, calc(100% - 40px));
+  padding: 156px 0 96px 56px;
+  color: var(--paper);
+}
+
+.eyebrow,
+.sectionLabel {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.heroContent h1 {
+  margin: 20px 0 18px;
+  font-family: var(--serif);
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.heroSubtitle {
+  max-width: 560px;
+  margin: 0;
+  color: rgba(255, 252, 245, 0.9);
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.heroMeta span {
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: var(--paper);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.introBand,
+.detailsBand,
+.scheduleBand,
+.rsvpBand {
+  padding: 88px 56px;
+}
+
+.introBand {
+  display: grid;
+  grid-template-columns: minmax(160px, 240px) minmax(0, 760px);
+  gap: 48px;
+  background: var(--paper);
+}
+
+.introBand h2,
+.sectionHeader h2,
+.rsvpBand h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.introBand p,
+.rsvpBand p {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.detailsBand {
+  background: var(--mist);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 38px;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.detailCard {
+  min-height: 188px;
+  border: 1px solid rgba(39, 76, 71, 0.18);
+  border-radius: 8px;
+  padding: 28px;
+  background: rgba(255, 252, 245, 0.74);
+}
+
+.detailCard p,
+.detailCard span,
+.scheduleList p {
+  color: var(--muted);
+}
+
+.detailCard p {
+  margin: 0 0 34px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.detailCard h3,
+.scheduleList h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.detailCard span,
+.scheduleList p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.scheduleBand {
+  background: var(--paper);
+}
+
+.scheduleList {
+  display: grid;
+  gap: 0;
+  max-width: 920px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scheduleList li {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 28px;
+  border-top: 1px solid rgba(39, 76, 71, 0.18);
+  padding: 28px 0;
+}
+
+.scheduleList li:last-child {
+  border-bottom: 1px solid rgba(39, 76, 71, 0.18);
+}
+
+.scheduleList time {
+  color: var(--terracotta);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.scheduleList p {
+  margin: 0;
+}
+
+.rsvpBand {
+  display: grid;
+  grid-template-columns: minmax(0, 680px) auto;
+  gap: 32px;
+  align-items: center;
+  color: var(--paper);
+  background: var(--evergreen);
+}
+
+.rsvpBand p {
+  color: rgba(255, 252, 245, 0.78);
+}
+
+.primaryAction,
+.pendingAction {
+  justify-self: end;
+  border-radius: 999px;
+  padding: 14px 22px;
+  background: var(--paper);
+  font-weight: 700;
+}
+
+.primaryAction {
+  color: var(--evergreen);
+  text-decoration: none;
+}
+
+.pendingAction {
+  color: rgba(19, 44, 40, 0.72);
+}
+
+.primaryAction:hover,
+.primaryAction:focus-visible {
+  background: var(--gold);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 28px;
+  color: var(--muted);
+  background: var(--paper);
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    min-height: 64px;
+    padding: 0 20px;
+  }
+
+  .navLinks {
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .heroSection {
+    min-height: 88vh;
+  }
+
+  .heroContent {
+    width: calc(100% - 40px);
+    padding: 136px 20px 64px;
+  }
+
+  .heroContent h1 {
+    font-size: 48px;
+    line-height: 1;
+  }
+
+  .heroSubtitle {
+    font-size: 17px;
+  }
+
+  .introBand,
+  .detailsBand,
+  .scheduleBand,
+  .rsvpBand {
+    padding: 64px 20px;
+  }
+
+  .introBand,
+  .rsvpBand,
+  .sectionHeader {
+    display: block;
+  }
+
+  .introBand h2,
+  .sectionHeader h2,
+  .rsvpBand h2 {
+    margin-top: 12px;
+    font-size: 34px;
+  }
+
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .scheduleList li {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .primaryAction,
+  .pendingAction {
+    display: inline-flex;
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navLinks a:first-child {
+    display: none;
+  }
+
+  .heroContent h1 {
+    font-size: 40px;
+  }
+
+  .heroMeta {
+    display: grid;
+  }
+
+  .heroMeta span {
+    width: fit-content;
+  }
+}
