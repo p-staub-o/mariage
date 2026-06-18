@@ -6,8 +6,34 @@ export const content = {
     'Avec Sofia Viramontes de la Torre, nous préparons une célébration simple, chaleureuse et entourée des personnes qui comptent pour nous.',
   date: '19 juin 2027',
   time: 'Cérémonie à 15 h',
+  city: 'Montréal, Québec',
   location: 'Basilique Marie-Reine-du-Monde',
   mapUrl: 'https://maps.app.goo.gl/siPaPTSHrXeAVTsXA',
+  saveTheDate: {
+    label: 'Save the Date',
+    title: '19 juin 2027',
+    subtitle: 'Philippe & Sofia',
+    body:
+      'Nous serions heureux de vous compter parmi nous. La cérémonie aura lieu à 15 h à la Basilique Marie-Reine-du-Monde.',
+    note: "Invitation officielle et détails de la réception à venir.",
+    calendarFile: 'philippe-sofia-save-the-date.ics',
+    calendarText: 'Ajouter au calendrier',
+    mapText: 'Ouvrir la carte',
+    facts: [
+      {
+        label: 'Ville',
+        value: 'Montréal, Québec',
+      },
+      {
+        label: 'Cérémonie',
+        value: '15 h',
+      },
+      {
+        label: 'Lieu',
+        value: 'Basilique Marie-Reine-du-Monde',
+      },
+    ],
+  },
   story: {
     label: 'Notre histoire',
     title: 'Une journée pensée pour rassembler nos familles et nos amis.',

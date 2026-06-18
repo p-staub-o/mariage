@@ -51,6 +51,13 @@ main {
   text-underline-offset: 6px;
 }
 
+#save-the-date,
+#story,
+#details,
+#rsvp {
+  scroll-margin-top: 72px;
+}
+
 .heroSection {
   position: relative;
   display: grid;
@@ -132,10 +139,112 @@ main {
 }
 
 .introBand,
+.saveDateBand,
 .detailsBand,
 .scheduleBand,
 .rsvpBand {
   padding: 88px 56px;
+}
+
+.saveDateBand {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+  gap: 56px;
+  align-items: center;
+  color: var(--paper);
+  background: var(--terracotta);
+}
+
+.saveDateLead h2 {
+  margin: 20px 0 14px;
+  font-family: var(--serif);
+  font-size: 72px;
+  font-weight: 500;
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.saveDateLead p:last-child {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.saveDateDetails > p {
+  max-width: 680px;
+  margin: 0;
+  color: rgba(255, 252, 245, 0.88);
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+.saveDateFacts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 34px 0 0;
+  border-top: 1px solid rgba(255, 252, 245, 0.34);
+  border-bottom: 1px solid rgba(255, 252, 245, 0.34);
+}
+
+.saveDateFacts div {
+  padding: 22px 22px 22px 0;
+}
+
+.saveDateFacts div + div {
+  border-left: 1px solid rgba(255, 252, 245, 0.26);
+  padding-left: 22px;
+}
+
+.saveDateFacts dt {
+  margin: 0 0 8px;
+  color: rgba(255, 252, 245, 0.72);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.saveDateFacts dd {
+  margin: 0;
+  color: var(--paper);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.saveDateActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.saveDateActions a {
+  border-radius: 999px;
+  padding: 13px 18px;
+  color: var(--evergreen);
+  background: var(--paper);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.saveDateActions a + a {
+  color: var(--paper);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 252, 245, 0.5);
+}
+
+.saveDateActions a:hover,
+.saveDateActions a:focus-visible {
+  background: var(--gold);
+  color: var(--evergreen);
+}
+
+.saveDateNote {
+  margin-top: 18px;
+  color: rgba(255, 252, 245, 0.72);
+  font-size: 15px;
 }
 
 .introBand {
@@ -348,6 +457,7 @@ footer {
   }
 
   .introBand,
+  .saveDateBand,
   .detailsBand,
   .scheduleBand,
   .rsvpBand {
@@ -355,9 +465,40 @@ footer {
   }
 
   .introBand,
+  .saveDateBand,
   .rsvpBand,
   .sectionHeader {
     display: block;
+  }
+
+  .saveDateLead h2 {
+    font-size: 48px;
+  }
+
+  .saveDateLead p:last-child {
+    font-size: 25px;
+  }
+
+  .saveDateDetails {
+    margin-top: 34px;
+  }
+
+  .saveDateDetails > p {
+    font-size: 17px;
+  }
+
+  .saveDateFacts {
+    grid-template-columns: 1fr;
+  }
+
+  .saveDateFacts div {
+    padding: 18px 0;
+  }
+
+  .saveDateFacts div + div {
+    border-top: 1px solid rgba(255, 252, 245, 0.26);
+    border-left: 0;
+    padding-left: 0;
   }
 
   .introBand h2,
@@ -389,7 +530,7 @@ footer {
     height: 38px;
   }
 
-  .navLinks a:first-child {
+  .optionalNavLink {
     display: none;
   }
 

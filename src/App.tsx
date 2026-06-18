@@ -1,8 +1,20 @@
+import { useEffect } from 'react'
 import heroImage from './assets/wedding-hero.png'
 import { content } from './content'
 import './App.css'
 
 function App() {
+  const calendarHref = `${import.meta.env.BASE_URL}${content.saveTheDate.calendarFile}`
+
+  useEffect(() => {
+    const elementId = window.location.hash.slice(1)
+    if (!elementId) return
+
+    window.requestAnimationFrame(() => {
+      document.getElementById(elementId)?.scrollIntoView()
+    })
+  }, [])
+
   return (
     <main>
       <nav className="topbar" aria-label="Navigation principale">
@@ -10,7 +22,10 @@ function App() {
           {content.initials}
         </a>
         <div className="navLinks">
-          <a href="#story">Notre histoire</a>
+          <a href="#save-the-date">Save the Date</a>
+          <a className="optionalNavLink" href="#story">
+            Notre histoire
+          </a>
           <a href="#details">Détails</a>
           <a href="#rsvp">RSVP</a>
         </div>
@@ -30,8 +45,42 @@ function App() {
           <div className="heroMeta" aria-label="Informations principales">
             <span>{content.date}</span>
             <span>{content.time}</span>
+            <span>{content.city}</span>
             <span>{content.location}</span>
           </div>
+        </div>
+      </section>
+
+      <section
+        className="saveDateBand"
+        id="save-the-date"
+        aria-labelledby="save-date-title"
+      >
+        <div className="saveDateLead">
+          <p className="sectionLabel">{content.saveTheDate.label}</p>
+          <h2 id="save-date-title">{content.saveTheDate.title}</h2>
+          <p>{content.saveTheDate.subtitle}</p>
+        </div>
+
+        <div className="saveDateDetails">
+          <p>{content.saveTheDate.body}</p>
+          <dl className="saveDateFacts" aria-label="Informations du Save the Date">
+            {content.saveTheDate.facts.map((fact) => (
+              <div key={fact.label}>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="saveDateActions">
+            <a href={calendarHref} download>
+              {content.saveTheDate.calendarText}
+            </a>
+            <a href={content.mapUrl} target="_blank" rel="noreferrer">
+              {content.saveTheDate.mapText}
+            </a>
+          </div>
+          <p className="saveDateNote">{content.saveTheDate.note}</p>
         </div>
       </section>
 
@@ -56,7 +105,12 @@ function App() {
               <h3>{item.title}</h3>
               <span>{item.description}</span>
               {item.linkHref ? (
-                <a className="detailCardLink" href={item.linkHref} target="_blank" rel="noreferrer">
+                <a
+                  className="detailCardLink"
+                  href={item.linkHref}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {item.linkText}
                 </a>
               ) : null}
