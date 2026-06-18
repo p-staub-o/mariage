@@ -36,15 +36,13 @@ npm run assets:hero
 
 Le workflow `.github/workflows/deploy.yml` publie automatiquement le site lorsque la branche `main` est poussee.
 
-Dans les settings GitHub du repo, configurer Pages avec:
+Le repo distant est:
+
+```text
+https://github.com/p-staub-o/mariage
+```
+
+La configuration Pages attendue est:
 
 - Source: `GitHub Actions`
-- Branch: `main`
-
-## Creation du repo distant
-
-Le repo local est prevu pour `p-staub-o/mariage`. Si `gh` est connecte au compte `p-staub-o`, la creation distante peut se faire avec:
-
-```bash
-gh repo create p-staub-o/mariage --public --source=. --remote=origin --push
-```
+- URL: `https://p-staub-o.github.io/mariage/`
