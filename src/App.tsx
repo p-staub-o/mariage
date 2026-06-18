@@ -1,22 +1,86 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import heroImage from './assets/wedding-hero.png'
 import { content } from './content'
 import './App.css'
 
 function App() {
   const calendarHref = `${import.meta.env.BASE_URL}${content.saveTheDate.calendarFile}`
+  const [envelopeState, setEnvelopeState] = useState<'sealed' | 'opening' | 'open'>('sealed')
+
+  function scrollToSection(elementId: string) {
+    const target = document.getElementById(elementId)
+    if (!target) return
+
+    const navHeight = window.matchMedia('(max-width: 860px)').matches ? 64 : 72
+    const originalScrollBehavior = document.documentElement.style.scrollBehavior
+    document.documentElement.style.scrollBehavior = 'auto'
+    window.scrollTo(0, target.offsetTop - navHeight)
+    document.documentElement.style.scrollBehavior = originalScrollBehavior
+  }
 
   useEffect(() => {
     const elementId = window.location.hash.slice(1)
     if (!elementId) return
 
     window.requestAnimationFrame(() => {
-      document.getElementById(elementId)?.scrollIntoView()
+      scrollToSection(elementId)
     })
   }, [])
 
+  useEffect(() => {
+    if (envelopeState === 'open') return
+
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.overflow = originalOverflow
+    }
+  }, [envelopeState])
+
+  function openEnvelope() {
+    if (envelopeState !== 'sealed') return
+
+    setEnvelopeState('opening')
+    window.setTimeout(() => {
+      setEnvelopeState('open')
+      window.history.replaceState(null, '', '#save-the-date')
+      scrollToSection('save-the-date')
+    }, 1100)
+  }
+
   return (
     <main>
+      {envelopeState !== 'open' ? (
+        <section
+          className={`envelopeIntro ${envelopeState === 'opening' ? 'isOpening' : ''}`}
+          aria-label="Invitation de mariage"
+        >
+          <div className="envelopeStage" aria-hidden="true">
+            <div className="envelopeShadow" />
+            <div className="envelope">
+              <div className="envelopeBack" />
+              <div className="envelopePaper">
+                <span>{content.saveTheDate.label}</span>
+                <strong>{content.date}</strong>
+              </div>
+              <div className="envelopeFlap" />
+              <div className="envelopePocketLeft" />
+              <div className="envelopePocketRight" />
+              <div className="envelopeFront" />
+            </div>
+          </div>
+          <button
+            className="waxSeal"
+            type="button"
+            onClick={openEnvelope}
+            aria-label="Ouvrir l'invitation Save the Date"
+          >
+            <span>S&amp;P</span>
+          </button>
+        </section>
+      ) : null}
+
       <nav className="topbar" aria-label="Navigation principale">
         <a className="brand" href="#hero" aria-label="Accueil">
           {content.initials}
