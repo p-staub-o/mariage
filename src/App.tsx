@@ -29,6 +29,7 @@ function App() {
           <p className="heroSubtitle">{content.heroSubtitle}</p>
           <div className="heroMeta" aria-label="Informations principales">
             <span>{content.date}</span>
+            <span>{content.time}</span>
             <span>{content.location}</span>
           </div>
         </div>
@@ -54,6 +55,11 @@ function App() {
               <p>{item.kicker}</p>
               <h3>{item.title}</h3>
               <span>{item.description}</span>
+              {item.linkHref ? (
+                <a className="detailCardLink" href={item.linkHref} target="_blank" rel="noreferrer">
+                  {item.linkText}
+                </a>
+              ) : null}
             </article>
           ))}
         </div>

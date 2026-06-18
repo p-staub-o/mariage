@@ -121,12 +121,14 @@ main {
 }
 
 .heroMeta span {
+  max-width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.52);
   border-radius: 999px;
   padding: 10px 16px;
   color: var(--paper);
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
+  overflow-wrap: anywhere;
 }
 
 .introBand,
@@ -213,6 +215,27 @@ main {
 .scheduleList p {
   font-size: 16px;
   line-height: 1.6;
+}
+
+.detailCard span {
+  display: block;
+}
+
+.detailCardLink {
+  display: inline-flex;
+  margin-top: 22px;
+  border-radius: 999px;
+  padding: 9px 14px;
+  color: var(--paper);
+  background: var(--evergreen);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.detailCardLink:hover,
+.detailCardLink:focus-visible {
+  background: var(--terracotta);
 }
 
 .scheduleBand {

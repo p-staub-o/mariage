@@ -4,35 +4,42 @@ export const content = {
   coupleName: 'Philippe & Sofia',
   heroSubtitle:
     'Avec Sofia Viramontes de la Torre, nous préparons une célébration simple, chaleureuse et entourée des personnes qui comptent pour nous.',
-  date: 'Date à confirmer',
-  location: 'Lieu à confirmer',
+  date: '19 juin 2027',
+  time: 'Cérémonie à 15 h',
+  location: 'Basilique Marie-Reine-du-Monde',
+  mapUrl: 'https://maps.app.goo.gl/siPaPTSHrXeAVTsXA',
   story: {
     label: 'Notre histoire',
     title: 'Une journée pensée pour rassembler nos familles et nos amis.',
     body:
-      'Ce site regroupera les informations pratiques du mariage: horaire, lieu, hébergement, transport et RSVP. Pour le moment, les détails restent volontairement provisoires.',
+      'Ce site regroupera les informations pratiques du mariage: cérémonie, réception, hébergement, transport et RSVP. Certains détails restent provisoires et seront ajoutés au fil des confirmations.',
   },
   details: {
     label: 'Détails',
-    title: 'Les informations importantes auront leur place ici.',
+    title: 'La cérémonie aura lieu au coeur de Montréal.',
     items: [
       {
         kicker: 'Cérémonie',
-        title: 'Adresse à venir',
-        description:
-          "Le lieu exact sera ajouté dès qu'il sera confirmé avec les informations d'accès.",
+        title: 'Basilique Marie-Reine-du-Monde',
+        description: 'La cérémonie commencera à 15 h le 19 juin 2027.',
+        linkHref: 'https://maps.app.goo.gl/siPaPTSHrXeAVTsXA',
+        linkText: 'Ouvrir la carte',
       },
       {
         kicker: 'Réception',
         title: 'Célébration',
         description:
           'Un espace pour partager le programme, le repas, la musique et les moments forts de la soirée.',
+        linkHref: '',
+        linkText: '',
       },
       {
         kicker: 'Voyage',
         title: 'Transport et séjour',
         description:
           "Les recommandations d'hôtel, stationnement et déplacement seront publiées avant l'envoi officiel.",
+        linkHref: '',
+        linkText: '',
       },
     ],
   },
@@ -46,9 +53,9 @@ export const content = {
         description: 'Arrivée, installation et premiers moments ensemble.',
       },
       {
-        time: 'À venir',
+        time: '15 h',
         title: 'Cérémonie',
-        description: 'Le moment officiel avec nos proches.',
+        description: 'Basilique Marie-Reine-du-Monde.',
       },
       {
         time: 'À venir',
