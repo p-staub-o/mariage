@@ -12,7 +12,7 @@
   --std-toffee: #a66a37;
   --std-toffee-dark: #5b3219;
   --std-toffee-light: #d8a169;
-  --std-contrast-accent: #4a2b14;
+  --std-contrast-accent: #7a461f;
   --std-gold: #c7a765;
   --std-script: 'Snell Roundhand', 'Apple Chancery', 'Brush Script MT', 'Segoe Script', cursive;
 }
@@ -358,7 +358,7 @@ body {
 
 .announcementKicker {
   margin: 0 0 22px;
-  color: #7f493f;
+  color: var(--std-contrast-accent);
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
