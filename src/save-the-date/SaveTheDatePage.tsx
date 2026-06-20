@@ -40,7 +40,11 @@ export function SaveTheDatePage() {
       <section className="announcementScene" aria-labelledby="announcement-title">
         <article className="announcementCard">
           <p className="announcementKicker">{content.saveTheDate.label}</p>
-          <h1 id="announcement-title">{content.saveTheDate.subtitle}</h1>
+          <h1 id="announcement-title" aria-label="Sofia Viramontes de la Torre et Philippe St-Aubin">
+            {content.saveTheDate.fullNames.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+          </h1>
           <p className="announcementDate">{content.date}</p>
           <p className="announcementCity">{content.city}</p>
           <div className="ornament" aria-hidden="true" />
