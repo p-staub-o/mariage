@@ -18,7 +18,7 @@ export const content = {
     note: "Invitation officielle et détails de la réception à venir.",
     calendarFile: 'philippe-sofia-save-the-date.ics',
     calendarText: 'Ajouter au calendrier',
-    mapText: 'Ouvrir la carte',
+    mapText: 'Adresse',
     facts: [
       {
         label: 'Ville',
@@ -49,7 +49,7 @@ export const content = {
         title: 'Basilique Marie-Reine-du-Monde',
         description: 'La cérémonie commencera à 15 h le 19 juin 2027.',
         linkHref: 'https://maps.app.goo.gl/siPaPTSHrXeAVTsXA',
-        linkText: 'Ouvrir la carte',
+        linkText: 'Adresse',
       },
       {
         kicker: 'Réception',
