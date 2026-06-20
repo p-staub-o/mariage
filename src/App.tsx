@@ -1,95 +1,16 @@
-import { useEffect, useState } from 'react'
 import heroImage from './assets/wedding-hero.png'
 import { content } from './content'
 import './App.css'
 
 function App() {
-  const calendarHref = `${import.meta.env.BASE_URL}${content.saveTheDate.calendarFile}`
-  const [envelopeState, setEnvelopeState] = useState<'sealed' | 'opening' | 'open'>('sealed')
-
-  function scrollToSection(elementId: string) {
-    const target = document.getElementById(elementId)
-    if (!target) return
-
-    const navHeight = window.matchMedia('(max-width: 860px)').matches ? 64 : 72
-    const originalScrollBehavior = document.documentElement.style.scrollBehavior
-    document.documentElement.style.scrollBehavior = 'auto'
-    window.scrollTo(0, target.offsetTop - navHeight)
-    document.documentElement.style.scrollBehavior = originalScrollBehavior
-  }
-
-  useEffect(() => {
-    const elementId = window.location.hash.slice(1)
-    if (!elementId) return
-
-    window.requestAnimationFrame(() => {
-      scrollToSection(elementId)
-    })
-  }, [])
-
-  useEffect(() => {
-    if (envelopeState === 'open') return
-
-    const originalOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-
-    return () => {
-      document.body.style.overflow = originalOverflow
-    }
-  }, [envelopeState])
-
-  function openEnvelope() {
-    if (envelopeState !== 'sealed') return
-
-    setEnvelopeState('opening')
-    window.setTimeout(() => {
-      setEnvelopeState('open')
-      window.history.replaceState(null, '', '#save-the-date')
-      scrollToSection('save-the-date')
-    }, 1100)
-  }
-
   return (
     <main>
-      {envelopeState !== 'open' ? (
-        <section
-          className={`envelopeIntro ${envelopeState === 'opening' ? 'isOpening' : ''}`}
-          aria-label="Invitation de mariage"
-        >
-          <div className="envelopeStage" aria-hidden="true">
-            <div className="envelopeShadow" />
-            <div className="envelope">
-              <div className="envelopeBack" />
-              <div className="envelopePaper">
-                <span>{content.saveTheDate.label}</span>
-                <strong>{content.date}</strong>
-              </div>
-              <div className="envelopeFlap" />
-              <div className="envelopePocketLeft" />
-              <div className="envelopePocketRight" />
-              <div className="envelopeFront" />
-            </div>
-          </div>
-          <button
-            className="waxSeal"
-            type="button"
-            onClick={openEnvelope}
-            aria-label="Ouvrir l'invitation Save the Date"
-          >
-            <span>S&amp;P</span>
-          </button>
-        </section>
-      ) : null}
-
       <nav className="topbar" aria-label="Navigation principale">
         <a className="brand" href="#hero" aria-label="Accueil">
           {content.initials}
         </a>
         <div className="navLinks">
-          <a href="#save-the-date">Save the Date</a>
-          <a className="optionalNavLink" href="#story">
-            Notre histoire
-          </a>
+          <a href="#story">Notre histoire</a>
           <a href="#details">Détails</a>
           <a href="#rsvp">RSVP</a>
         </div>
@@ -112,39 +33,6 @@ function App() {
             <span>{content.city}</span>
             <span>{content.location}</span>
           </div>
-        </div>
-      </section>
-
-      <section
-        className="saveDateBand"
-        id="save-the-date"
-        aria-labelledby="save-date-title"
-      >
-        <div className="saveDateLead">
-          <p className="sectionLabel">{content.saveTheDate.label}</p>
-          <h2 id="save-date-title">{content.saveTheDate.title}</h2>
-          <p>{content.saveTheDate.subtitle}</p>
-        </div>
-
-        <div className="saveDateDetails">
-          <p>{content.saveTheDate.body}</p>
-          <dl className="saveDateFacts" aria-label="Informations du Save the Date">
-            {content.saveTheDate.facts.map((fact) => (
-              <div key={fact.label}>
-                <dt>{fact.label}</dt>
-                <dd>{fact.value}</dd>
-              </div>
-            ))}
-          </dl>
-          <div className="saveDateActions">
-            <a href={calendarHref} download>
-              {content.saveTheDate.calendarText}
-            </a>
-            <a href={content.mapUrl} target="_blank" rel="noreferrer">
-              {content.saveTheDate.mapText}
-            </a>
-          </div>
-          <p className="saveDateNote">{content.saveTheDate.note}</p>
         </div>
       </section>
 

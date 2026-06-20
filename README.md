@@ -22,6 +22,12 @@ Le site est configure avec `base: "/mariage/"`, ce qui correspond a l'URL GitHub
 https://p-staub-o.github.io/mariage/
 ```
 
+Le Save the Date public est une page autonome, non liee au reste du site:
+
+```text
+https://p-staub-o.github.io/mariage/save-the-date/
+```
+
 ## Contenu
 
 Le contenu principal est centralise dans `src/content.ts`. Remplacer les valeurs provisoires de date, lieu, horaire et RSVP dans ce fichier.
