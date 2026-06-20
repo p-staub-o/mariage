@@ -7,9 +7,20 @@ BEGIN:VEVENT
 UID:20270619T150000-sofia-philippe-mariage@p-staub-o.github.io
 DTSTAMP:20260618T000000Z
 DTSTART;TZID=America/Toronto:20270619T150000
+DTEND;TZID=America/Toronto:20270620T000000
 SUMMARY:Mariage de Sofia et Philippe
 LOCATION:Basilique Marie-Reine-du-Monde, Montréal, Québec
 DESCRIPTION:Save the Date pour le mariage de Sofia et Philippe. La cérémonie aura lieu à 15 h à la Basilique Marie-Reine-du-Monde. Invitation officielle et détails de la réception à venir.
 URL:https://p-staub-o.github.io/mariage/save-the-date/
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:Rappel: mariage de Sofia et Philippe dans une semaine.
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P2D
+ACTION:DISPLAY
+DESCRIPTION:Rappel: mariage de Sofia et Philippe dans deux jours.
+END:VALARM
 END:VEVENT
 END:VCALENDAR
