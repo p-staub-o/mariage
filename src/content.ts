@@ -13,7 +13,7 @@ export const content = {
     label: 'Save the Date',
     title: '19 juin 2027',
     subtitle: 'Sofia & Philippe',
-    fullNames: ['Sofia Viramontes de la Torre', '& Philippe St-Aubin'],
+    fullNames: ['Sofia Viramontes de la Torre', '&', 'Philippe St-Aubin'],
     body:
       'Nous serions heureux de vous compter parmi nous. La cérémonie aura lieu à 15 h à la Basilique Marie-Reine-du-Monde.',
     note: "Invitation officielle et détails de la réception à venir.",

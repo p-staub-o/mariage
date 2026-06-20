@@ -5,15 +5,19 @@
   --std-paper-deep: #e9d6b4;
   --std-green: #1f2a18;
   --std-green-soft: #6f7a61;
-  --std-wax: #a66a37;
-  --std-wax-dark: #5b3219;
+  --std-wax: #26331d;
+  --std-wax-dark: #0e1609;
+  --std-wax-light: #586647;
+  --std-toffee: #a66a37;
+  --std-toffee-dark: #5b3219;
   --std-toffee-light: #d8a169;
+  --std-contrast-accent: #4a2b14;
   --std-gold: #c7a765;
   --std-script: 'Snell Roundhand', 'Apple Chancery', 'Brush Script MT', 'Segoe Script', cursive;
 }
 
 body {
-  background: var(--std-green);
+  background: var(--std-toffee-dark);
 }
 
 .standaloneSaveDate {
@@ -22,8 +26,9 @@ body {
   overflow: hidden;
   color: var(--std-ink);
   background:
-    radial-gradient(circle at 50% 34%, rgba(255, 248, 234, 0.25), rgba(255, 248, 234, 0) 34%),
-    linear-gradient(145deg, #38422e 0%, #202b18 50%, #10170c 100%);
+    radial-gradient(circle at 50% 34%, rgba(255, 248, 234, 0.26), rgba(255, 248, 234, 0) 34%),
+    radial-gradient(ellipse at 20% 12%, rgba(255, 218, 172, 0.22), transparent 28%),
+    linear-gradient(145deg, #d8a169 0%, #a66a37 46%, #5b3219 100%);
 }
 
 .standaloneSaveDate::before {
@@ -33,8 +38,8 @@ body {
   pointer-events: none;
   opacity: 0.16;
   background-image:
-    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.36) 0 1px, transparent 1px),
-    radial-gradient(circle at 80% 65%, rgba(0, 0, 0, 0.32) 0 1px, transparent 1px);
+    radial-gradient(circle at 10% 20%, rgba(255, 248, 234, 0.48) 0 1px, transparent 1px),
+    radial-gradient(circle at 80% 65%, rgba(71, 43, 20, 0.4) 0 1px, transparent 1px);
   background-size: 6px 6px, 9px 9px;
   mix-blend-mode: soft-light;
 }
@@ -81,9 +86,9 @@ body {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 12%, rgba(255, 248, 234, 0.16), transparent 26%),
-    radial-gradient(ellipse at 88% 88%, rgba(255, 248, 234, 0.11), transparent 22%),
-    linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.26));
+    radial-gradient(ellipse at 20% 12%, rgba(255, 248, 234, 0.22), transparent 26%),
+    radial-gradient(ellipse at 88% 88%, rgba(255, 248, 234, 0.16), transparent 22%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(73, 39, 18, 0.3));
 }
 
 .invitationObject {
@@ -243,15 +248,15 @@ body {
   border: 0;
   color: #fff7e8;
   background:
-    radial-gradient(circle at 37% 28%, rgba(255, 218, 172, 0.78), rgba(255, 218, 172, 0) 19%),
-    radial-gradient(circle at 64% 68%, rgba(93, 50, 24, 0.54), rgba(93, 50, 24, 0) 24%),
-    radial-gradient(circle at 46% 54%, var(--std-toffee-light), var(--std-wax) 64%, var(--std-wax-dark) 100%);
+    radial-gradient(circle at 37% 28%, rgba(196, 210, 169, 0.58), rgba(196, 210, 169, 0) 19%),
+    radial-gradient(circle at 64% 68%, rgba(12, 21, 8, 0.62), rgba(12, 21, 8, 0) 24%),
+    radial-gradient(circle at 46% 54%, var(--std-wax-light), var(--std-wax) 64%, var(--std-wax-dark) 100%);
   clip-path: polygon(50% 1%, 60% 5%, 70% 3%, 78% 11%, 88% 14%, 93% 26%, 99% 37%, 96% 50%, 100% 61%, 92% 72%, 89% 83%, 76% 89%, 68% 98%, 55% 96%, 44% 100%, 33% 94%, 21% 92%, 14% 81%, 5% 75%, 4% 62%, 0 51%, 5% 39%, 4% 28%, 13% 18%, 22% 10%, 34% 8%, 43% 2%);
   box-shadow:
-    inset 0 3px 6px rgba(255, 229, 195, 0.28),
-    inset 0 -12px 20px rgba(73, 39, 18, 0.48),
-    0 4px 0 rgba(82, 45, 23, 0.72),
-    0 18px 28px rgba(56, 36, 18, 0.34);
+    inset 0 3px 6px rgba(213, 226, 186, 0.22),
+    inset 0 -12px 20px rgba(7, 15, 4, 0.54),
+    0 4px 0 rgba(14, 22, 9, 0.76),
+    0 18px 28px rgba(49, 31, 15, 0.36);
   cursor: pointer;
   transform: translate(-50%, -42%) rotate(-2deg);
   transition:
@@ -267,8 +272,8 @@ body {
   border-radius: 50%;
   border: 1px solid rgba(255, 238, 217, 0.2);
   box-shadow:
-    inset 0 2px 5px rgba(255, 235, 205, 0.24),
-    inset 0 -5px 9px rgba(74, 39, 18, 0.34);
+    inset 0 2px 5px rgba(222, 236, 197, 0.2),
+    inset 0 -5px 9px rgba(7, 15, 4, 0.36);
 }
 
 .realWaxSeal::after {
@@ -279,7 +284,7 @@ body {
   width: 30px;
   height: 34px;
   border-radius: 45% 54% 44% 52%;
-  background: rgba(100, 55, 26, 0.5);
+  background: rgba(12, 21, 8, 0.46);
   filter: blur(0.2px);
 }
 
@@ -295,8 +300,8 @@ body {
   text-align: center;
   text-shadow:
     0 1px 0 rgba(255, 244, 229, 0.28),
-    0 -1px 0 rgba(70, 39, 20, 0.48),
-    1px 2px 3px rgba(70, 39, 20, 0.36);
+    0 -1px 0 rgba(8, 13, 5, 0.56),
+    1px 2px 3px rgba(8, 13, 5, 0.42);
   transform: translate(-3px, 1px) rotate(-4deg);
   transform-origin: 50% 54%;
 }
@@ -359,7 +364,7 @@ body {
   font-family: var(--std-script);
   font-size: 52px;
   font-weight: 400;
-  line-height: 0.98;
+  line-height: 0.92;
   color: var(--std-green);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.66);
 }
@@ -370,7 +375,12 @@ body {
 }
 
 .announcementCard h1 span + span {
-  margin-top: 4px;
+  margin-top: 2px;
+}
+
+.announcementCard h1 span:nth-child(2) {
+  font-size: 0.82em;
+  line-height: 0.72;
 }
 
 .announcementDate {
@@ -378,7 +388,8 @@ body {
   font-family: var(--serif);
   font-size: 42px;
   line-height: 1;
-  color: #8a5a2f;
+  color: var(--std-contrast-accent);
+  font-weight: 700;
 }
 
 .announcementCity {
@@ -415,7 +426,8 @@ body {
 }
 
 .announcementCopy strong {
-  color: #8a5a2f;
+  color: var(--std-contrast-accent);
+  font-weight: 800;
 }
 
 .announcementNote {
