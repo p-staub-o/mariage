@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "vite",
     "assets:hero": "node scripts/generate-hero-image.mjs",
+    "assets:save-date-email": "node scripts/capture-save-the-date-email-preview.mjs",
     "build": "tsc -b && vite build",
     "check": "npm run lint && npm run build",
     "lint": "eslint .",

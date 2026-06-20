@@ -336,6 +336,22 @@ body {
   transform: translate(-50%, 18%) scale(0.72);
 }
 
+:root[data-preview='email'] .sealedScene {
+  display: none;
+}
+
+:root[data-preview='email'] .announcementScene {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: none;
+}
+
+:root[data-preview='email'] .announcementActions {
+  display: none;
+}
+
 .announcementCard {
   width: min(680px, calc(100vw - 42px));
   min-height: min(760px, calc(100vh - 72px));
