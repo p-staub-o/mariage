@@ -285,15 +285,19 @@ body {
 .realWaxSeal span {
   position: relative;
   z-index: 1;
+  display: block;
+  width: 100%;
   font-family: var(--std-script);
   font-size: 32px;
   font-style: italic;
   line-height: 1;
+  text-align: center;
   text-shadow:
     0 1px 0 rgba(255, 244, 229, 0.28),
     0 -1px 0 rgba(60, 13, 10, 0.46),
     1px 2px 3px rgba(60, 13, 10, 0.34);
-  transform: rotate(-4deg);
+  transform: translate(-3px, 1px) rotate(-4deg);
+  transform-origin: 50% 54%;
 }
 
 .realWaxSeal:hover,
