@@ -17,7 +17,7 @@
 }
 
 body {
-  background: var(--std-toffee-dark);
+  background: var(--std-green);
 }
 
 .standaloneSaveDate {
@@ -26,9 +26,9 @@ body {
   overflow: hidden;
   color: var(--std-ink);
   background:
-    radial-gradient(circle at 50% 34%, rgba(255, 248, 234, 0.26), rgba(255, 248, 234, 0) 34%),
-    radial-gradient(ellipse at 20% 12%, rgba(255, 218, 172, 0.22), transparent 28%),
-    linear-gradient(145deg, #d8a169 0%, #a66a37 46%, #5b3219 100%);
+    radial-gradient(circle at 50% 34%, rgba(255, 248, 234, 0.25), rgba(255, 248, 234, 0) 34%),
+    radial-gradient(ellipse at 20% 12%, rgba(255, 248, 234, 0.13), transparent 28%),
+    linear-gradient(145deg, #38422e 0%, #202b18 50%, #10170c 100%);
 }
 
 .standaloneSaveDate::before {
@@ -38,8 +38,8 @@ body {
   pointer-events: none;
   opacity: 0.16;
   background-image:
-    radial-gradient(circle at 10% 20%, rgba(255, 248, 234, 0.48) 0 1px, transparent 1px),
-    radial-gradient(circle at 80% 65%, rgba(71, 43, 20, 0.4) 0 1px, transparent 1px);
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.36) 0 1px, transparent 1px),
+    radial-gradient(circle at 80% 65%, rgba(0, 0, 0, 0.32) 0 1px, transparent 1px);
   background-size: 6px 6px, 9px 9px;
   mix-blend-mode: soft-light;
 }
@@ -86,9 +86,9 @@ body {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 12%, rgba(255, 248, 234, 0.22), transparent 26%),
-    radial-gradient(ellipse at 88% 88%, rgba(255, 248, 234, 0.16), transparent 22%),
-    linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(73, 39, 18, 0.3));
+    radial-gradient(ellipse at 20% 12%, rgba(255, 248, 234, 0.16), transparent 26%),
+    radial-gradient(ellipse at 88% 88%, rgba(255, 248, 234, 0.11), transparent 22%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.26));
 }
 
 .invitationObject {
