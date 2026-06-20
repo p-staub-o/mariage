@@ -1,9 +1,9 @@
 export const content = {
-  initials: 'P+S',
+  initials: 'S+P',
   kicker: 'Nous allons nous marier',
-  coupleName: 'Philippe & Sofia',
+  coupleName: 'Sofia & Philippe',
   heroSubtitle:
-    'Avec Sofia Viramontes de la Torre, nous préparons une célébration simple, chaleureuse et entourée des personnes qui comptent pour nous.',
+    'Sofia et Philippe préparent une célébration simple, chaleureuse et entourée des personnes qui comptent pour eux.',
   date: '19 juin 2027',
   time: 'Cérémonie à 15 h',
   city: 'Montréal, Québec',
@@ -12,11 +12,11 @@ export const content = {
   saveTheDate: {
     label: 'Save the Date',
     title: '19 juin 2027',
-    subtitle: 'Philippe & Sofia',
+    subtitle: 'Sofia & Philippe',
     body:
       'Nous serions heureux de vous compter parmi nous. La cérémonie aura lieu à 15 h à la Basilique Marie-Reine-du-Monde.',
     note: "Invitation officielle et détails de la réception à venir.",
-    calendarFile: 'philippe-sofia-save-the-date.ics',
+    calendarFile: 'sofia-philippe-save-the-date.ics',
     calendarText: 'Ajouter au calendrier',
     mapText: 'Adresse',
     facts: [
@@ -98,5 +98,5 @@ export const content = {
     email: '',
     buttonText: 'RSVP à venir',
   },
-  footer: 'Philippe St-Aubin & Sofia Viramontes de la Torre',
+  footer: 'Sofia Viramontes de la Torre & Philippe St-Aubin',
 } as const

@@ -1,6 +1,6 @@
-# Mariage Philippe & Sofia
+# Mariage Sofia & Philippe
 
-Site web statique pour le mariage de Philippe et Sofia Viramontes de la Torre.
+Site web statique pour le mariage de Sofia Viramontes de la Torre et Philippe St-Aubin.
 
 ## Stack
 

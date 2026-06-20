@@ -4,7 +4,7 @@ These instructions apply to the entire repository.
 
 ## Project
 
-This repo contains the static wedding website for Philippe and Sofia Viramontes de la Torre.
+This repo contains the static wedding website for Sofia Viramontes de la Torre and Philippe St-Aubin.
 
 ## Commands
 
