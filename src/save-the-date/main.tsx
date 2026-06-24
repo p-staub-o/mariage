@@ -6,6 +6,14 @@ import { SaveTheDatePage } from './SaveTheDatePage'
 
 const searchParams = new URLSearchParams(window.location.search)
 
+function setSaveDateHeight() {
+  document.documentElement.style.setProperty('--save-date-height', `${window.innerHeight}px`)
+}
+
+setSaveDateHeight()
+window.addEventListener('resize', setSaveDateHeight)
+window.addEventListener('orientationchange', setSaveDateHeight)
+
 if (searchParams.get('open') === '1') {
   document.documentElement.dataset.invitation = 'open'
 }
