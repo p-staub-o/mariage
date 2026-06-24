@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copier le courriel | Sofia & Philippe</title>
+    <style>
+      :root {
+        color: #1f2a18;
+        background: #f6f1e8;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #f6f1e8;
+      }
+
+      .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid #d7c7ad;
+        background: rgba(246, 241, 232, 0.96);
+        padding: 16px;
+        text-align: center;
+        box-shadow: 0 8px 22px rgba(31, 42, 24, 0.08);
+      }
+
+      .toolbar h1 {
+        margin: 0 0 10px;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 22px;
+        font-weight: 400;
+      }
+
+      .toolbar p {
+        max-width: 720px;
+        margin: 0 auto 12px;
+        color: #5f6656;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .copyButton {
+        border: 0;
+        border-radius: 4px;
+        padding: 13px 22px;
+        color: #fff8ea;
+        background: #b17434;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .copyButton:focus-visible {
+        outline: 3px solid #1f2a18;
+        outline-offset: 3px;
+      }
+
+      .status {
+        min-height: 20px;
+        margin: 10px 0 0;
+        color: #7a461f;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .previewFrame {
+        width: 100%;
+        padding: 24px 0 42px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="toolbar">
+      <h1>Courriel Save the Date</h1>
+      <p>
+        Cliquez sur “Copier le courriel”, puis collez directement dans le corps du courriel. Le
+        bouton “Voir les détails” et l'image pointeront vers la page Save the Date.
+      </p>
+      <button class="copyButton" type="button">Copier le courriel</button>
+      <p class="status" role="status" aria-live="polite"></p>
+    </header>
+
+    <main class="previewFrame" aria-label="Aperçu du courriel à copier">
+      <div id="emailPreview"></div>
+    </main>
+
+    <script>
+      const emailUrl = new URL('save-the-date-email.html', window.location.href)
+      const preview = document.querySelector('#emailPreview')
+      const copyButton = document.querySelector('.copyButton')
+      const statusMessage = document.querySelector('.status')
+      let emailHtml = ''
+
+      const plainText = `Sofia Viramontes de la Torre et Philippe St-Aubin vous invitent à garder cette date.
+
+Save the Date | 19 juin 2027
+Cérémonie à 15 h à la Basilique Marie-Reine-du-Monde, Montréal.
+
+Voir les détails :
+https://p-staub-o.github.io/mariage/save-the-date/`
+
+      function setStatus(message) {
+        statusMessage.textContent = message
+      }
+
+      async function loadEmailTemplate() {
+        const response = await fetch(emailUrl, { cache: 'no-store' })
+        if (!response.ok) {
+          throw new Error(`Impossible de charger le template: ${response.status}`)
+        }
+
+        const templateText = await response.text()
+        const parsed = new DOMParser().parseFromString(templateText, 'text/html')
+        emailHtml = parsed.body.innerHTML
+        preview.innerHTML = emailHtml
+      }
+
+      async function copyRichEmail() {
+        if (!emailHtml) return
+
+        try {
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              'text/html': new Blob([emailHtml], { type: 'text/html' }),
+              'text/plain': new Blob([plainText], { type: 'text/plain' }),
+            }),
+          ])
+          setStatus('Courriel copié. Collez maintenant dans le corps du courriel.')
+          return
+        } catch {
+          const range = document.createRange()
+          range.selectNodeContents(preview)
+          const selection = window.getSelection()
+          selection.removeAllRanges()
+          selection.addRange(range)
+          const copied = document.execCommand('copy')
+          selection.removeAllRanges()
+          setStatus(
+            copied
+              ? 'Courriel copié. Collez maintenant dans le corps du courriel.'
+              : 'Copie automatique impossible. Sélectionnez l’aperçu puis copiez manuellement.',
+          )
+        }
+      }
+
+      copyButton.addEventListener('click', copyRichEmail)
+
+      loadEmailTemplate().catch((error) => {
+        setStatus(error.message)
+      })
+    </script>
+  </body>
+</html>
